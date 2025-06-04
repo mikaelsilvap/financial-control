@@ -1,0 +1,76 @@
+# =========================
+# Node (Backend e Frontend)
+/backend/node_modules
+/frontend/node_modules
+
+# Build Output
+/backend/dist
+/backend/build
+/frontend/dist
+/frontend/dist-ssr
+
+# Temporary
+.temp
+.tmp
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Coverage & Test
+/coverage
+/.nyc_output
+
+# Prisma Generated (caso use)
+/backend/generated/prisma
+
+# Runtime Data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Diagnostic Reports
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# dotenv Environment Variables
+/backend/.env
+/backend/.env.development.local
+/backend/.env.test.local
+/backend/.env.production.local
+/backend/.env.local
+
+/frontend/.env
+/frontend/.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDEs and Editors
+.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Visual Studio
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

@@ -1,0 +1,25 @@
+{
+  "transactions": [
+    {
+      "id": "1",
+      "date": "2024-05-01",
+      "description": "Salário",
+      "category": "Renda",
+      "value": 5000
+    },
+    {
+      "id": "2",
+      "date": "2024-05-05",
+      "description": "Conta de Luz",
+      "category": "Casa",
+      "value": -200
+    },
+    {
+      "id": "facc",
+      "date": "2025-06-02",
+      "description": "Teste",
+      "category": "Casa",
+      "value": 100
+    }
+  ]
+}

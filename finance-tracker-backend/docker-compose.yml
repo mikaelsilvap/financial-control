@@ -1,0 +1,43 @@
+version: '3.8'
+
+services:
+  # Serviço do Banco de Dados PostgreSQL
+  db:
+    image: postgres:15-alpine
+    container_name: finance-tracker-db
+    restart: always
+    ports:
+      - '5432:5432' # Porta externa : porta interna do container
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+    volumes:
+      - pgdata:/var/lib/postgresql/data # Persistência dos dados
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -h localhost"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # Serviço da aplicação NestJS
+  app:
+    build:
+      context: . # Usa o Dockerfile na raiz do projeto
+      dockerfile: Dockerfile
+    container_name: finance-tracker-app
+    restart: always
+    ports:
+      - '3000:3000' # Porta da API
+    environment:
+      DATABASE_URL: ${DATABASE_URL} # URL de conexão do Prisma com o banco
+    depends_on:
+      db:
+        condition: service_healthy # Espera o banco estar saudável antes de subir o app
+    command: node dist/main
+
+    env_file:
+      - .env # Carrega as variáveis do arquivo .env
+
+volumes:
+  pgdata: # Volume para armazenar dados do PostgreSQL

@@ -44,31 +44,31 @@ Aplicativo completo de controle financeiro, com backend e frontend integrados, d
 
 1. Clone o repositório:  
 ```bash
-git clone https://github.com/mikaelsilvap/financial-control.git
+git clone https://github.com/mikaelsilvap/financial-control.git ```
 
 2. Entre na pasta do backend e instale as dependências:
 ```bash
 cd finance-tracker-backend
-npm install
+npm install ```
 
 3. Configure o banco de dados PostgreSQL (ex: via Docker ou localmente) e ajuste o arquivo .env com suas credenciais.
 
 4. Execute as migrations do Prisma:
 ```bash
-npx prisma migrate deploy
+npx prisma migrate deploy ```
 
 5.Rode o backend:
 ```bash
-npm run start:dev
+npm run start:dev ```
 
 6.Em outro terminal, vá para o frontend e instale as dependências:
 ```bash
 cd ../finance-tracker-frontend
-npm install
+npm install ```
 
 7.Rode o frontend:
 ```bash
-npm run dev
+npm run dev ```
 
 8. Acesse http://localhost:3000 no navegador para usar a aplicação.
 
